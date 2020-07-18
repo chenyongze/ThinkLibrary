@@ -41,7 +41,8 @@ class AdminService extends Service
      */
     public function isSuper()
     {
-        return $this->getUserName() === 'admin';
+        // return $this->getUserName() === 'admin';
+        return in_array($this->getUserName(), ['admin@yangmen', 'admin']);
     }
 
     /**
@@ -145,5 +146,4 @@ class AdminService extends Service
         $this->app->cache->delete('system_auth_node');
         return $this;
     }
-
 }
